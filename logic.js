@@ -40,7 +40,7 @@ let changeState = function (state) {
         let sucess = setTimeout(function () {
             let randomNumber = Math.round(Math.random() * 10);
             console.log('randomNumber: ', randomNumber)
-            if (randomNumber > 9) {
+            if (randomNumber > 5) {
                 changeState(4) //yeheeey!
             } else {
                 changeState(5) //nauuur :<
