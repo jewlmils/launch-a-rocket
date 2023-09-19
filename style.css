@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    paddingL 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .left {
     background-color: aliceblue;
     position: fixed;
@@ -5,10 +16,12 @@
     height: 100%;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
-    background-color: lightgrey;
     position: fixed;
     width: 50%;
     height: 100%;
@@ -16,55 +29,127 @@
     right: 0;
 }
 
-.rocket {
-    position: absolute;
-    left:50%;
-    bottom: 20px;
-    width: 20px;
-    height: 100px;
-    background-color: coral;
-    transition: bottom 10000ms;
+.interface {
+    text-align: center;
+    padding: 20px;
 }
 
-body.body-state1 .rocket{
+a.button {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+a.button:hover{
+    background-color: lightcoral;
+    color: white;
+}
+
+/* rocket bg images */
+body.body-state2 .rocket {
+    background-image: url(images/rocket-state2.gif);
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+    background-image: url(images/rocket-state3.gif);
+}
+
+body.body-state5 .rocket {
+    background-image: url(images/boom.png);
+    width: 209px;
+    height: 200px;
+    margin-left: -104.5;
+}
+
+/*  */
+body.body-state1 .rocket {
     transition: none;
 }
 
 body.body-state3 .rocket,
-body.body-state4 .rocket{
+body.body-state4 .rocket {
     bottom: 1000px;
 }
 
-.ground{
-    background-color: green;
+.ground {
+    background: url(images/ground.png) no-repeat center 0;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     width: 100%;
     height: 20px;
+}
+
+.nervous {
+    position: absolute;
+    bottom: 220px;
+    left: 50%;
+    width: 223px;
+    height: 100px;
+    margin-left: -180px;
+    background: url(images/nervous.png) no-repeat 0 0;
+    display: none;
+}
+
+.nervous.show {
+    display: block;
+}
+
+.cant-wait {
+    position: absolute;
+    bottom: 220px;
+    left: 50%;
+    width: 206px;
+    height: 65px;
+    background: url(images/cant-wait.png) no-repeat 0 0;
+    display: none;
+}
+
+.cant-wait.show {
+    display: block;
+}
+
+.rocket {
+    position: absolute;
+    left: 50%;
+    bottom: -13px;
+    width: 143px;
+    height: 272px;
+    margin-left: -71.5px;
+    background: url(images/rocket-state1.png) no-repeat 0 0;
+    transition: bottom 10000ms;
 }
 
 .state1,
 .state2,
 .state3,
 .state4,
-.state5{
+.state5 {
     display: none;
 }
 
-body.body-state1 .state1{
-    display: block;
-}
-body.body-state2 .state2{
-    display: block;
-}
-body.body-state3 .state3{
-    display: block;
-}
-body.body-state4 .state4{
-    display: block;
-}
-body.body-state5 .state5{
+body.body-state1 .state1 {
     display: block;
 }
 
+body.body-state2 .state2 {
+    display: block;
+}
+
+body.body-state3 .state3 {
+    display: block;
+}
+
+body.body-state4 .state4 {
+    display: block;
+}
+
+body.body-state5 .state5 {
+    display: block;
+}
